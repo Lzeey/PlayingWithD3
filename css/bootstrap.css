@@ -4724,9 +4724,9 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 6px 12px;
   margin-left: -1px;
   line-height: 1.42857143;
-  color: #337ab7;
+  color: azure; /*#337ab7;*/
   text-decoration: none;
-  background-color: #fff;
+  background-color: rgba(20,20,40,0.2);/*#fff;*/
   border: 1px solid #ddd;
 }
 .pagination > li:first-child > a,
