@@ -1,0 +1,44 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Trying out multi-graph</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    
+    <div class="jumbotron">
+    <h1>Reading uneven rows</h1>
+    </div> <!--! end of #container -->
+
+
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/d3.js"></script>
+    <script>
+        d3.text('data/user_description.csv',function(dataText){
+            data = d3.csvParseRows(dataText);
+            data = data.filter(function(d){return d[0] == "user3"})[0]
+            data = parseRow(data);
+           function parseRow(row){
+               var parsedRow = {};
+               parsedRow.username = row[0];
+               parsedRow.value = [];
+               for (i of row.slice(1)) {
+                   if (i.length > 0) {
+                       parsedRow.value.push(i);
+                   };
+               }
+               
+               return parsedRow;
+           }
+            
+            console.log(data);
+            
+        });
+
+
+
+    </script>
+</body>
+</html>
